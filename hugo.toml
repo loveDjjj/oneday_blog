@@ -11,6 +11,9 @@ theme = "PaperMod"
   ShowBreadCrumbs = true
   ShowToc = true
 
+  # 关键：让首页/列表页把 guide 也当成主内容区展示
+  mainSections = ["posts", "guide"]
+
 [[menu.main]]
   name = "文章"
   url = "/posts/"
@@ -20,3 +23,8 @@ theme = "PaperMod"
   name = "标签"
   url = "/tags/"
   weight = 2
+
+[[menu.main]]
+  name = "指南"
+  url = "/guide/"
+  weight = 3
