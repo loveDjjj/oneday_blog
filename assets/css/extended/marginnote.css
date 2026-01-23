@@ -1,0 +1,70 @@
+:root {
+  --article-width: 650px;
+  --sidenote-width: 260px;
+
+  /* ⭐注解离正文的水平距离（越大越远） */
+  --sidenote-gap: 80px;
+}
+
+/* 正文里的 # 标注：浅蓝色 */
+.sidenote-number {
+  display: inline-block;
+  font-size: 0.9em;
+  vertical-align: super;
+  margin-left: 0.2em;
+
+  color: #7fb6ff; /* 浅蓝 */
+  font-weight: 700;
+  opacity: 0.95;
+}
+
+/* 右侧注解里的 #：粉红色 */
+.sidenote-mark {
+  color: #ff6fae; /* 粉红 */
+  font-weight: 800;
+  margin-right: 6px;
+}
+
+/* 注解本体：透明、无背景无边框 */
+.sidenote {
+  color: var(--primary);
+  font-size: 0.92rem;
+  line-height: 1.45;
+
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+/* 桌面端：固定显示在正文右侧（不影响正文居中） */
+@media (min-width: 1200px) {
+  /* 让 sidenote 相对每个段落定位 */
+  .post-content p,
+  .post-content li,
+  .post-content blockquote {
+    position: relative;
+  }
+
+  .sidenote {
+    position: absolute;
+    top: 0;
+
+    /* ⭐关键：放到“正文右侧外面” */
+    left: calc(100% + var(--sidenote-gap));
+    width: var(--sidenote-width);
+
+    /* 防止遮挡点击/选择正文 */
+    pointer-events: auto;
+  }
+}
+
+/* 小屏幕：回到正文内联显示（否则会溢出屏幕） */
+@media (max-width: 1199px) {
+  .sidenote {
+    display: inline;
+    margin-left: 0.4em;
+    width: auto;
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,38 @@
+/* ===========================
+   Code Block 背景改成灰色
+   兼容 PaperMod + highlight.js
+   =========================== */
+
+/* 1) PaperMod / Chroma 常见结构：pre */
+.post-content pre {
+  background: rgba(240, 240, 240, 0.92) !important; /* 灰色背景 */
+  border: none !important;
+  box-shadow: none !important;
+
+  border-radius: 14px;
+  padding: 1em !important;
+}
+
+/* 2) inline code（行内代码） */
+.post-content :not(pre) > code {
+  background: rgba(240, 240, 240, 0.9) !important;
+  border-radius: 8px;
+  padding: 0.15em 0.4em;
+}
+
+/* 3) highlight.js 的背景控制（最关键） */
+pre code.hljs,
+code.hljs,
+.hljs {
+  background: transparent !important; /* 让背景交给 pre 控制 */
+}
+
+/* 4) 暗色模式下用深灰 */
+body.dark .post-content pre {
+  background: rgba(45, 45, 45, 0.92) !important;
+}
+
+/* 暗色模式下的行内代码 */
+body.dark .post-content :not(pre) > code {
+  background: rgba(45, 45, 45, 0.9) !important;
+}

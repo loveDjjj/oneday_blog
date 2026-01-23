@@ -1,0 +1,53 @@
+/* ============================
+   Quote Center（诗词居中引用）
+   ============================ */
+
+blockquote.quote-center {
+  position: relative;
+  margin: 1.4em auto;
+  padding: 1.4em 1.2em;
+
+  border: none !important;
+  background: transparent !important;
+
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* 内容 */
+blockquote.quote-center .quote-center-content {
+  margin: 0;
+  text-align: center;
+  white-space: pre-line;
+  line-height: 1.9;
+
+  font-family: 'LXGWWenKai', sans-serif !important;
+  color: var(--primary);
+}
+
+/* 左右引号 */
+blockquote.quote-center::before {
+  content: "“";
+  position: absolute;
+  left: 0;
+  top: -0.35em;
+  font-size: 3em;
+  font-weight: 900;
+  color: rgba(120, 120, 120, 0.35);
+}
+
+blockquote.quote-center::after {
+  content: "”";
+  position: absolute;
+  right: 0;
+  bottom: -0.55em;
+  font-size: 3em;
+  font-weight: 900;
+  color: rgba(120, 120, 120, 0.35);
+}
+
+/* 暗色模式 */
+body.dark blockquote.quote-center {
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}

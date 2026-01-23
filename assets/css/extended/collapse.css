@@ -1,0 +1,53 @@
+/* ===========================
+   Collapse Shortcode Styling
+   =========================== */
+
+/* 折叠块整体宽度与正文一致 */
+.post-content details.collapse-block {
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+
+  margin: 0rem 0;
+  padding: 0rem 0rem;
+
+  border: none;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* 暗色模式更协调 */
+.dark .post-content details.collapse-block {
+  background: rgba(30, 30, 30, 0.35);
+}
+
+/* summary（标题行） */
+.post-content details.collapse-block summary {
+  cursor: pointer;
+  user-select: none;
+  font-weight: 600;
+  padding: 0.35rem 0.2rem;
+}
+
+/* 展开内容与标题拉开距离 */
+.post-content .collapse-content {
+  margin-top: 0.6rem;
+}
+
+/* ⭐关键：让折叠块内部的代码块宽度不要超出正文 */
+.post-content details.collapse-block pre {
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+
+  margin: 0.6rem 0;
+  overflow-x: auto;
+}
+
+/* 防止 code 撑宽 */
+.post-content details.collapse-block pre code {
+  display: block;
+  max-width: 100%;
+  box-sizing: border-box;
+}

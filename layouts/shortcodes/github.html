@@ -1,0 +1,24 @@
+<div class="github">
+  <div class="github_bar">
+
+    {{- $avatar := .Get "avatar" | default .Site.Params.githubAvatar -}}
+
+    {{- if $avatar -}}
+      <img class="github-avatar" src="{{ $avatar }}" alt="GitHub Avatar" loading="lazy">
+    {{- else -}}
+      {{ replace $.Site.Data.SVG.repository "icon" "icon github-icon" | safeHTML }}
+    {{- end -}}
+
+    <a class="github_name" href="{{ .Get "link" }}" target="_blank" rel="noopener noreferrer">
+      {{ .Get "name" }}
+    </a>
+  </div>
+
+  {{ with .Get "description" }}
+    <div class="github_description">{{ . }}</div>
+  {{ end }}
+
+  {{ with .Get "language" }}
+    <div class="github_language">语言：{{ . }}</div>
+  {{ end }}
+</div>

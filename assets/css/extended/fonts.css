@@ -1,0 +1,38 @@
+/* ========== 自定义字体 ========== */
+@font-face {
+  font-family: "NotoSansSC";
+  src: url("/fonts/NotoSansSC-Regular.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "FiraCodeNerdFont";
+  src: url("/fonts/FiraCodeNerdFont-Regular.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "LXGWWenKai";
+  src: url("/fonts/LXGWWenKai-Regular.woff2") format("woff2");
+  font-display: swap;
+}
+
+/* ========== 全站正文 ========== */
+body {
+  font-family: "NotoSansSC", sans-serif !important;
+  font-size: medium !important;
+}
+
+/* ========== 代码字体 ========== */
+code,
+pre,
+pre code {
+  font-family: "FiraCodeNerdFont", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
+}
+
+/* ========== 点缀字体（可选）========== */
+/* 例如：标题更有“文楷”感觉 */
+.post-title,
+.logo a {
+  font-family: "LXGWWenKai", "NotoSansSC", sans-serif !important;
+}

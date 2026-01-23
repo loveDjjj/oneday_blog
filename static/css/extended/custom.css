@@ -24,7 +24,7 @@ body, .main, .header, .footer {
 }
 
 .main {
-  background: rgba(255, 255, 255, 0.55) !important;
+  background: rgba(255, 255, 255, 0.15) !important;
   border-radius: 16px;
   padding: 1.5rem;
 }

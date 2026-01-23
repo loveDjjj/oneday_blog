@@ -1,0 +1,55 @@
+/* ============================
+   Quote（仿截图风格：无背景，文字靠左）
+   ============================ */
+
+blockquote.quote {
+  position: relative;
+  margin: 1.2em auto;
+  padding: 0.2em 0 0.2em 3.2em;
+
+  border: none !important;
+  background: transparent !important;
+}
+
+/* 左侧大引号 */
+blockquote.quote::before {
+  content: "“";
+  position: absolute;
+  left: 0;
+  top: -0.15em;
+
+  font-size: 4.2em;
+  font-weight: 900;
+  line-height: 1;
+
+  color: rgba(255, 255, 255, 0.55); /* 暗色模式更明显 */
+}
+
+/* 引用正文：靠左 + 保留换行 */
+blockquote.quote .quote-content {
+  margin: 0;
+  white-space: pre-line;   /* 保留换行 */
+  text-align: left !important;
+
+  font-style: italic;
+  line-height: 1.8;
+  font-size: 1.05rem;
+
+  color: var(--primary);
+}
+
+/* 作者：右下角 */
+blockquote.quote .quote-author {
+  margin-top: 0.9em;
+  text-align: right;
+  font-style: italic;
+  font-size: 1rem;
+
+  color: var(--secondary);
+  opacity: 0.85;
+}
+
+/* 亮色模式下引号不要太突兀 */
+body:not(.dark) blockquote.quote::before {
+  color: rgba(0, 0, 0, 0.22);
+}

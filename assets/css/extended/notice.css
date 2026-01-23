@@ -1,0 +1,117 @@
+/* ===========================
+   Notice / Callout Box (Flat)
+   无边框 + 有底色版本
+   =========================== */
+
+.notice {
+  margin: 1rem 0;
+  padding: 0.9rem 1rem;
+  border-radius: 12px;
+
+  /* 不要边框 */
+  border: none !important;
+
+  /* 默认背景（如果 type 没匹配到） */
+  background: rgba(240, 240, 240, 0.7);
+
+  /* 不要玻璃模糊 */
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+
+  /* 不要阴影（你想要也可以加） */
+  box-shadow: none !important;
+}
+
+.notice-header {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 0.35rem;
+}
+
+.notice-title {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.notice-body {
+  line-height: 1.6;
+}
+
+/* SVG icon 样式 */
+.notice-icon svg.icon {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  vertical-align: middle;
+  opacity: 0.95;
+}
+
+/* ============ 类型底色（重点） ============ */
+
+/* warning：淡黄 */
+.notice-warning {
+  background: rgba(255, 225, 160, 0.35) !important;
+}
+
+.notice-warning .notice-title,
+.notice-warning .notice-icon svg.icon {
+  color: #ffb300;
+  fill: currentColor;
+}
+
+/* info：淡蓝 */
+.notice-info {
+  background: rgba(150, 210, 255, 0.28) !important;
+}
+
+.notice-info .notice-title,
+.notice-info .notice-icon svg.icon {
+  color: #4aa3ff;
+  fill: currentColor;
+}
+
+/* note：淡紫 */
+.notice-note {
+  background: rgba(200, 170, 255, 0.28) !important;
+}
+
+.notice-note .notice-title,
+.notice-note .notice-icon svg.icon {
+  color: #a26bff;
+  fill: currentColor;
+}
+
+/* tip：淡绿 */
+.notice-tip {
+  background: rgba(150, 235, 190, 0.28) !important;
+}
+
+.notice-tip .notice-title,
+.notice-tip .notice-icon svg.icon {
+  color: #2ecc71;
+  fill: currentColor;
+}
+
+/* ============ 让列表更紧凑（可选） ============ */
+.notice-body ul,
+.notice-body ol {
+  margin: 0.4rem 0 0.2rem 1.2rem;
+}
+
+/* ============ 暗色模式适配（保持“有底色”） ============ */
+.dark .notice-warning {
+  background: rgba(255, 180, 0, 0.18) !important;
+}
+
+.dark .notice-info {
+  background: rgba(80, 160, 255, 0.18) !important;
+}
+
+.dark .notice-note {
+  background: rgba(160, 110, 255, 0.18) !important;
+}
+
+.dark .notice-tip {
+  background: rgba(80, 220, 140, 0.18) !important;
+}

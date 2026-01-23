@@ -2,6 +2,7 @@
 title: Command Guide
 date: 2026-01-22
 lastmod: 2026-01-23
+showLastMod: true
 slug: command-guide
 description: "服务器常用命令、代理排查、快速上线、Git 基本流程与常见 .gitignore 写法。"
 tags:

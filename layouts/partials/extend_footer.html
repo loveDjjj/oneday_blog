@@ -1,0 +1,25 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('pre code').forEach((block) => {
+      hljs.highlightElement(block);
+    });
+  });
+</script>
+
+{{- $pangu := resources.Get "js/pangu.js" -}}
+
+<script src="{{ $pangu.RelPermalink }}"></script>
+<script>
+  function applyPangu() {
+    if (typeof pangu !== "undefined") {
+      pangu.spacingPage();
+      console.log("pangu applied!");
+    } else {
+      console.log("pangu is undefined!");
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", applyPangu);
+  window.addEventListener("load", applyPangu);
+</script>

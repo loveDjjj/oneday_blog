@@ -1,0 +1,121 @@
+:root {
+  --article-width: 650px;
+  --toc-min-width: 220px;
+  --toc-max-width: 360px; /* 最大宽度，防止太宽挡正文 */
+  --toc-gap: 60px;
+}
+
+/* TOC 基础样式 */
+.toc {
+  margin: 0 2px 40px 2px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0); /* 半透明 */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: var(--radius);
+  padding: 0.4em;
+}
+
+/* 暗色模式 */
+.dark .toc {
+  background: rgba(23, 22, 22, 0) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* 目录内容区域 */
+.toc .inner {
+  margin: 0 0 0 20px;
+  padding: 0px 15px 15px 20px;
+  font-size: 16px;
+  max-height: 83vh;
+  overflow-y: auto;
+}
+
+/* 不让 TOC 的标题换行：关键在这里 */
+.toc a {
+  display: block;
+  white-space: nowrap;        /* 强制不换行 */
+  overflow: hidden;           /* 超出隐藏 */
+  text-overflow: ellipsis;    /* 超出显示 ... */
+}
+
+/* 可选：让列表点不要挤占空间 */
+.toc ul {
+  list-style-type: circle;
+}
+
+.toc li ul {
+  margin-inline-start: calc(var(--gap) * 0.5);
+  list-style-type: none;
+}
+
+.toc li {
+  list-style: none;
+  font-size: 0.95rem;
+  padding-bottom: 5px;
+}
+
+.toc li a:hover {
+  color: var(--secondary);
+}
+
+.toc details summary {
+  cursor: zoom-in;
+  margin-inline-start: 20px;
+  padding: 12px 0;
+}
+
+.toc details[open] summary {
+  font-weight: 500;
+}
+
+.toc .active {
+  font-size: 110%;
+  font-weight: 600;
+  color: #614a85;
+  text-decoration: underline;
+}
+
+/* 滚动条 */
+.toc .inner::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border: 7px solid var(--theme);
+  border-radius: var(--radius);
+}
+
+/* ================= 桌面端：侧边悬浮 + 宽度自动 ================= */
+@media (min-width: 1200px) {
+  .toc {
+    position: fixed;
+    top: 120px;
+
+    /* 跟随文章主体居中 */
+    left: calc(
+      50% - (var(--article-width) / 2) - var(--toc-max-width) - var(--toc-gap)
+    );
+
+    /* 宽度自适应：在 min/max 之间自动 */
+    width: fit-content;
+    min-width: var(--toc-min-width);
+    max-width: var(--toc-max-width);
+
+    z-index: 10;
+  }
+}
+
+/* ================= 小屏幕：不悬浮 ================= */
+@media (max-width: 1199px) {
+  .toc {
+    position: static;
+    width: auto;
+    max-width: 100%;
+  }
+
+  /* 小屏幕也不换行会导致太宽，所以这里允许换行 */
+  .toc a {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+  }
+}

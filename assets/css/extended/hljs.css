@@ -1,0 +1,273 @@
+pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em !important;
+}
+
+code.hljs {
+  padding: 3px 5px;
+}
+
+/* ========== Light: Atom One Light ========== */
+.hljs {
+  color: #383a42;
+  background: #fafafa;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #a0a1a7;
+  font-style: italic;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: #a626a4;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: #e45649;
+}
+
+.hljs-literal {
+  color: #0184bb;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta .hljs-string {
+  color: #50a14f;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #986801;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #4078f2;
+}
+
+.hljs-built_in,
+.hljs-title.class_,
+.hljs-class .hljs-title {
+  color: #c18401;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}
+
+/* ========== Dark: Nord ========== */
+body.dark .hljs {
+  background: #2e3440;
+}
+
+body.dark .hljs,
+body.dark .hljs-subst {
+  color: #d8dee9;
+}
+
+body.dark .hljs-selector-tag {
+  color: #81a1c1;
+}
+
+body.dark .hljs-selector-id {
+  color: #8fbcbb;
+  font-weight: 700;
+}
+
+body.dark .hljs-selector-attr,
+body.dark .hljs-selector-class {
+  color: #8fbcbb;
+}
+
+body.dark .hljs-property,
+body.dark .hljs-selector-pseudo {
+  color: #88c0d0;
+}
+
+body.dark .hljs-addition {
+  background-color: rgba(163, 190, 140, 0.5);
+}
+
+body.dark .hljs-deletion {
+  background-color: rgba(191, 97, 106, 0.5);
+}
+
+body.dark .hljs-built_in,
+body.dark .hljs-class,
+body.dark .hljs-type {
+  color: #8fbcbb;
+}
+
+body.dark .hljs-function,
+body.dark .hljs-function > .hljs-title,
+body.dark .hljs-title.hljs-function {
+  color: #88c0d0;
+}
+
+body.dark .hljs-keyword,
+body.dark .hljs-literal,
+body.dark .hljs-symbol {
+  color: #81a1c1;
+}
+
+body.dark .hljs-number {
+  color: #b48ead;
+}
+
+body.dark .hljs-regexp {
+  color: #ebcb8b;
+}
+
+body.dark .hljs-string {
+  color: #a3be8c;
+}
+
+body.dark .hljs-title {
+  color: #8fbcbb;
+}
+
+body.dark .hljs-params {
+  color: #d8dee9;
+}
+
+body.dark .hljs-bullet {
+  color: #81a1c1;
+}
+
+body.dark .hljs-code {
+  color: #8fbcbb;
+}
+
+body.dark .hljs-emphasis {
+  font-style: italic;
+}
+
+body.dark .hljs-formula {
+  color: #8fbcbb;
+}
+
+body.dark .hljs-strong {
+  font-weight: 700;
+}
+
+body.dark .hljs-link:hover {
+  text-decoration: underline;
+}
+
+body.dark .hljs-comment,
+body.dark .hljs-quote {
+  color: #4c566a;
+}
+
+body.dark .hljs-doctag {
+  color: #8fbcbb;
+}
+
+body.dark .hljs-meta,
+body.dark .hljs-meta .hljs-keyword {
+  color: #5e81ac;
+}
+
+body.dark .hljs-meta .hljs-string {
+  color: #a3be8c;
+}
+
+body.dark .hljs-attr {
+  color: #8fbcbb;
+}
+
+body.dark .hljs-attribute {
+  color: #d8dee9;
+}
+
+body.dark .hljs-name {
+  color: #81a1c1;
+}
+
+body.dark .hljs-section {
+  color: #88c0d0;
+}
+
+body.dark .hljs-tag {
+  color: #81a1c1;
+}
+
+body.dark .hljs-template-variable,
+body.dark .hljs-variable {
+  color: #d8dee9;
+}
+
+body.dark .hljs-template-tag {
+  color: #5e81ac;
+}
+/* ===========================
+   修复：浅色背景下代码看不清
+   让亮色模式使用深色字体
+   =========================== */
+
+/* 亮色模式：整体文字改深色 */
+body:not(.dark) .hljs {
+  color: #2b2b2b !important;
+}
+
+/* 亮色模式：注释、字符串、关键字等 token 颜色 */
+body:not(.dark) .hljs-comment,
+body:not(.dark) .hljs-quote {
+  color: #6a737d !important;
+  font-style: italic;
+}
+
+body:not(.dark) .hljs-keyword,
+body:not(.dark) .hljs-selector-tag,
+body:not(.dark) .hljs-literal {
+  color: #a626a4 !important;
+}
+
+body:not(.dark) .hljs-string,
+body:not(.dark) .hljs-title,
+body:not(.dark) .hljs-name,
+body:not(.dark) .hljs-type,
+body:not(.dark) .hljs-attribute {
+  color: #22863a !important;
+}
+
+body:not(.dark) .hljs-number,
+body:not(.dark) .hljs-symbol,
+body:not(.dark) .hljs-bullet {
+  color: #b08800 !important;
+}
+
+body:not(.dark) .hljs-function,
+body:not(.dark) .hljs-title.function_,
+body:not(.dark) .hljs-title.class_ {
+  color: #005cc5 !important;
+}

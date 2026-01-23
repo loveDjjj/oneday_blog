@@ -1,0 +1,33 @@
+{{/* 
+用法：
+{{< notice warning >}}内容{{< /notice >}}
+{{< notice info "标题" >}}内容{{< /notice >}}
+*/}}
+
+{{- $type := .Get 0 | default "note" -}}
+{{- $title := .Get 1 -}}
+
+{{- $iconKey := printf "notice-%s" $type -}}
+{{- $icon := index .Site.Params $iconKey | default "" -}}
+
+<div class="notice notice-{{ $type }}">
+  <div class="notice-header">
+    {{- if $icon -}}
+      <span class="notice-icon">{{ $icon | safeHTML }}</span>
+    {{- end -}}
+    <span class="notice-title">
+      {{- if $title -}}
+        {{ $title }}
+      {{- else -}}
+        {{- if eq $type "warning" -}}Warning{{- end -}}
+        {{- if eq $type "info" -}}Info{{- end -}}
+        {{- if eq $type "note" -}}Note{{- end -}}
+        {{- if eq $type "tip" -}}Tip{{- end -}}
+      {{- end -}}
+    </span>
+  </div>
+
+  <div class="notice-body">
+    {{ .Inner | markdownify }}
+  </div>
+</div>
