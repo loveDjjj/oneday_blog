@@ -1,0 +1,30 @@
+:root {
+  --bg-url: url("/images/background/bg1.jpg");
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: var(--bg-url);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.15;
+  z-index: -1;
+  pointer-events: none;
+}
+
+html, body {
+  background: transparent !important;
+}
+
+body, .main, .header, .footer {
+  background-color: transparent !important;
+}
+
+.main {
+  background: rgba(255, 255, 255, 0.55) !important;
+  border-radius: 16px;
+  padding: 1.5rem;
+}

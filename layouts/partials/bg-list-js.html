@@ -1,0 +1,13 @@
+<script>
+  window.__BGS__ = [
+    {{- $files := readDir "static/images/background" -}}
+    {{- $first := true -}}
+    {{- range $files -}}
+      {{- if and (not .IsDir) (or (hasSuffix .Name ".jpg") (hasSuffix .Name ".jpeg") (hasSuffix .Name ".png") (hasSuffix .Name ".webp")) -}}
+        {{- if not $first -}},{{- end -}}
+        "{{ printf "/images/background/%s" .Name }}"
+        {{- $first = false -}}
+      {{- end -}}
+    {{- end -}}
+  ];
+</script>
