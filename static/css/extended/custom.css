@@ -1,5 +1,5 @@
 :root {
-  --bg-url: url("/images/background/bg1.jpg");
+  --bg-url: none;
 }
 
 body::before {
