@@ -16,5 +16,7 @@ send_email: true
 
 晚上还把自动推送新博客的邮件功能做好了，因为之前接触过的邮箱的SMTP，所以也算是比较快了，但是GitHub Actions还是第一次听说。
 
+也不知道到这个系列能不能写下去，我希望可以一直写下去，至少在我还没有彻底失去转向的希望前。
+
 {{< figure src="/images/oneday/champion.jpg" align="center" caption="戴champion帽，举champion杯" >}}
 {{< figure src="/images/oneday/oneday_love_1.jpg" align="center" caption="小敏不要生气啦，要开心呀" >}}
