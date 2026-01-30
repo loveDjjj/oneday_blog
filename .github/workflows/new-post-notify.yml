@@ -44,9 +44,9 @@ jobs:
           ' "$FILE")
 
           # 3. 解析 draft
-          DRAFT=$(echo "$FRONT" | awk -F: '/^draft[[:space:]]*:/ {gsub(/ /,"",$2); print $2}')
+          Send_Email=$(echo "$FRONT" | awk -F: '/^send_email[[:space:]]*:/ {gsub(/ /,"",$2); print $2}')
 
-          if [ "$DRAFT" = "true" ]; then
+          if [ "$Send_Email" = "false" ]; then
             echo "Draft post, skip notify."
             echo "send=false" >> $GITHUB_OUTPUT
             exit 0
