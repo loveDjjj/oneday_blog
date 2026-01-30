@@ -4,8 +4,6 @@ weight: 1
 slug: oneday
 date: 2026-01-30
 lastmod: 2026-01-30
-categories:
-  - OneDay
 tags:
   - OneDay
 draft: false
