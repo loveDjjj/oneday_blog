@@ -12,13 +12,15 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 2   # ⭐ 关键：保证 HEAD~1 存在
 
       - name: Parse new post info
         id: post
         shell: bash
         run: |
-          # 1. 找到本次 push 中变动的文章（只取第一篇）
-          FILE=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} \
+          # 1. 找到最近一次提交中变动的文章
+          FILE=$(git diff --name-only HEAD~1 HEAD \
             | grep '^content/posts/.*\.md' \
             | head -n 1)
 
@@ -29,27 +31,25 @@ jobs:
 
           echo "Detected post file: $FILE"
 
-          # 2. 读取 Front Matter（--- 包裹部分）
+          # 2. 读取 Front Matter
           FRONT=$(sed -n '/^---$/,/^---$/p' "$FILE")
 
-          # 3. 解析 draft，草稿直接退出（不发邮件）
+          # 3. draft 过滤
           DRAFT=$(echo "$FRONT" | sed -n 's/^[[:space:]]*draft:[[:space:]]*//p' | head -n 1)
           if [ "$DRAFT" = "true" ]; then
             echo "Post is draft, skip notification."
             exit 0
           fi
 
-          # 4. 解析 title（允许前面有空格）
+          # 4. title
           TITLE=$(echo "$FRONT" | sed -n 's/^[[:space:]]*title:[[:space:]]*//p' | head -n 1)
 
-          # 5. 解析 slug（优先用 slug）
+          # 5. slug（优先）
           SLUG=$(echo "$FRONT" | sed -n 's/^[[:space:]]*slug:[[:space:]]*//p' | head -n 1)
-
           if [ -z "$SLUG" ]; then
             SLUG=$(basename "$FILE" .md)
           fi
 
-          # 6. 输出给后续 steps 使用
           echo "title=$TITLE" >> $GITHUB_OUTPUT
           echo "url=https://onedayoneday.xin/posts/$SLUG/" >> $GITHUB_OUTPUT
 
@@ -63,8 +63,7 @@ jobs:
           password: ${{ secrets.MAIL_PASS }}
 
           to: ${{ secrets.SUBSCRIBERS }}
-          from: "OneDay Blog <${{ secrets.MAIL_USER }}>"
-
+          from: "OneDay Blog Bot <${{ secrets.MAIL_USER }}>"
           subject: "📢 新文章发布：《${{ steps.post.outputs.title }}》"
 
           body: |
