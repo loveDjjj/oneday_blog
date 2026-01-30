@@ -13,7 +13,19 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Send email notification
+      - name: Get changed post
+        id: post
+        run: |
+          FILE=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep '^content/posts/.*\.md' | head -n 1)
+          echo "file=$FILE" >> $GITHUB_OUTPUT
+
+          TITLE=$(grep '^title:' "$FILE" | head -n 1 | sed 's/title:[ ]*//')
+          SLUG=$(basename "$FILE" .md)
+
+          echo "title=$TITLE" >> $GITHUB_OUTPUT
+          echo "url=https://onedayoneday.xin/posts/$SLUG/" >> $GITHUB_OUTPUT
+
+      - name: Send email to subscribers
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.qq.com
@@ -22,13 +34,15 @@ jobs:
           username: ${{ secrets.MAIL_USER }}
           password: ${{ secrets.MAIL_PASS }}
 
-          subject: "📢 Hugo 博客更新啦！"
-          to: 13545904054@163.com
-          from: "Hugo Bot <${{ secrets.MAIL_USER }}>"
+          subject: "📢 OneDay Blog新文章发布：《${{ steps.post.outputs.title }}》"
+          to: ${{ secrets.SUBSCRIBERS }}
+          from: "OneDay Blog Bot <${{ secrets.MAIL_USER }}>"
           body: |
-            OneDay的博客有新文章发布 🎉
+            你好 👋
 
-            博客地址：
-            https://onedayoneday.xin
+            Oneday的博客刚刚发布了一篇新文章：
 
-            时间：${{ github.event.head_commit.timestamp }}
+            📌 标题：${{ steps.post.outputs.title }}
+            🔗 链接：${{ steps.post.outputs.url }}
+
+            欢迎阅读～
