@@ -5,7 +5,6 @@ tags:
   - LLM
 draft: true
 slug: auto_reply_draft
-description: 基于LLM的三元情感分析
 ---
 ## 一、调用模型获得评论的三元情绪数组
 ### 提示词：
