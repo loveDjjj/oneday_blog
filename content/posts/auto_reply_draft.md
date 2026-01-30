@@ -3,9 +3,9 @@ title: 基于LLM的三元情感分析
 date: 2026-01-22
 tags:
   - LLM
-draft: false
+draft: true
 slug: auto_reply_draft
-send_email: false
+send_email: true
 ---
 ## 一、调用模型获得评论的三元情绪数组
 ### 提示词：
