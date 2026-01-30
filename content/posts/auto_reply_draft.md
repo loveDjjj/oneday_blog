@@ -3,7 +3,8 @@ title: 三元情感分析
 date: 2026-01-22
 tags:
   - 格式文件
-draft: true
+draft: false
+slug: auto_reply_draft
 ---
 ## 一、调用模型获得评论的三元情绪数组
 ### 提示词：
