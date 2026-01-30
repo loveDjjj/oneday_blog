@@ -13,47 +13,60 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
-          fetch-depth: 2   # ⭐ 关键：保证 HEAD~1 存在
+          fetch-depth: 2
 
       - name: Parse new post info
         id: post
         shell: bash
         run: |
+          set -e
+
           # 1. 找到最近一次提交中变动的文章
           FILE=$(git diff --name-only HEAD~1 HEAD \
             | grep '^content/posts/.*\.md' \
             | head -n 1)
 
           if [ -z "$FILE" ]; then
-            echo "No post file found."
+            echo "send=false" >> $GITHUB_OUTPUT
             exit 0
           fi
 
           echo "Detected post file: $FILE"
 
-          # 2. 读取 Front Matter
-          FRONT=$(sed -n '/^---$/,/^---$/p' "$FILE")
+          # 2. 用 awk 稳定解析 Front Matter
+          FRONT=$(awk '
+            BEGIN{in_fm=0}
+            /^---[[:space:]]*$/ {
+              if(in_fm==0){in_fm=1; next}
+              else{exit}
+            }
+            in_fm==1 {print}
+          ' "$FILE")
 
-          # 3. draft 过滤
-          DRAFT=$(echo "$FRONT" | sed -n 's/^[[:space:]]*draft:[[:space:]]*//p' | head -n 1)
+          # 3. 解析 draft
+          DRAFT=$(echo "$FRONT" | awk -F: '/^draft[[:space:]]*:/ {gsub(/ /,"",$2); print $2}')
+
           if [ "$DRAFT" = "true" ]; then
-            echo "Post is draft, skip notification."
+            echo "Draft post, skip notify."
+            echo "send=false" >> $GITHUB_OUTPUT
             exit 0
           fi
 
           # 4. title
-          TITLE=$(echo "$FRONT" | sed -n 's/^[[:space:]]*title:[[:space:]]*//p' | head -n 1)
+          TITLE=$(echo "$FRONT" | awk -F: '/^title[[:space:]]*:/ {sub(/^ /,"",$2); print $2}')
 
           # 5. slug（优先）
-          SLUG=$(echo "$FRONT" | sed -n 's/^[[:space:]]*slug:[[:space:]]*//p' | head -n 1)
+          SLUG=$(echo "$FRONT" | awk -F: '/^slug[[:space:]]*:/ {sub(/^ /,"",$2); print $2}')
           if [ -z "$SLUG" ]; then
             SLUG=$(basename "$FILE" .md)
           fi
 
+          echo "send=true" >> $GITHUB_OUTPUT
           echo "title=$TITLE" >> $GITHUB_OUTPUT
           echo "url=https://onedayoneday.xin/posts/$SLUG/" >> $GITHUB_OUTPUT
 
       - name: Send email to subscribers
+        if: steps.post.outputs.send == 'true'
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.qq.com
