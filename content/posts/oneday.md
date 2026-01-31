@@ -9,6 +9,15 @@ tags:
 draft: false
 send_email: true
 ---
+## 2026年1月31日
+从周三开始到今天打了三天游戏，更多的感受是像脱敏治疗，一贯的原则是，既然想打，那就一口气打到不想打为止。今天又看了很多关于上岸软微的帖子，每一次看都是深深地震撼。千言万语如鲠在喉，最后可能也只会说一句：
+{{< quote-center >}}
+谁终将声震人间，必长久深自缄默；
+谁终将点燃闪电，必长久如云漂泊。
+{{< /quote-center >}}
+
+{{< figure src="/images/oneday/pku.jpg" align="center" caption="软微圣经" >}}
+
 ## 2026年1月30日
 半夜读到了一篇知乎帖子，睡不着冒雨跑来工位上码字，帖子原文见 [AI科研一年的碎碎念 - 林正的文章 - 知乎](https://zhuanlan.zhihu.com/p/1895895464450184083)。 其实我一直对于自己想要走的路持悲观态度，倒不是因为非常难，而是因为我太想要去走这条路，过于强烈的欲望必然导致对于落空的极度恐惧，我很想逃离当前的处境，Sii可能是我唯一的出路，但是我已经在脑子里假设了因为无数种原因最后失去这个救命稻草。看到有着类似境遇的博主最后成功走出了属于自己的路，除了激动外，很多的还是反思，我的路究竟在哪里呢？我也不知道什么时候我可以不用向别人寻求出路，而是向自己寻求方向。
 
@@ -20,3 +29,4 @@ send_email: true
 
 {{< figure src="/images/oneday/champion.jpg" align="center" caption="戴champion帽，举champion杯" >}}
 {{< figure src="/images/oneday/oneday_love_1.jpg" align="center" caption="小敏不要生气啦，要开心呀" >}}
+
