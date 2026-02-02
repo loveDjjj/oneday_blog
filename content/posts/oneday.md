@@ -19,6 +19,27 @@ send_email: true
 如今，山中湍急的溪流早已扩展为大江，装满世界各地宝藏的大船在江面上行驶。大江涌向海洋，即将与世界上所有的水汇合......
 {{< /quote-center >}}
 
+pip 清华镜像：
+```python 
+pip install ms-swift -i https://pypi.tuna.tsinghua.edu.cn/simple
+```
+
+huggingface镜像三件套：
+```bash
+export HF_ENDPOINT=https://hf-mirror.com
+export HF_HUB_DISABLE_XET=1
+export HF_HUB_ENABLE_HF_TRANSFER=1
+```
+
+> #### ✅ Done
+> - [ ] 修改GAN-for-thin-film的代码，重跑，画图
+> - [ ] 列好年终总结的框架
+> - [ ] 准备好optogpt的训练代码和数据，上传服务器
+
+只能说配环境真是一生之敌，以及微调也是，真是连调库侠也不让我好好当。立志先做好调库侠，我一定要征服swift和llmfactory。
+
+{{< figure src="/images/oneday/beiyang.jpg" align="center" caption="在北杨，真的会在吗？" >}}
+
 
 ## 2026年2月1日（Sii-Day 1）
 > #### ✅ Todo
