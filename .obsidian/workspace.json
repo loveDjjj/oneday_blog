@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/posts/blog_style.md",
+                "file": "content/posts/oneday.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "blog_style"
+              "title": "oneday"
             }
           }
         ]
@@ -186,9 +186,11 @@
   },
   "active": "ef3d68b221ce1f79",
   "lastOpenFiles": [
+    "content/guide/command_guide.md",
+    "content/posts/oneday.md",
+    "content/posts/blog_style.md",
     "public/images/oneday/sii_night.jpg",
     "public/images/oneday/brave_sheep.jpg",
-    "content/posts/oneday.md",
     "content/posts/reference_log.md",
     "static/images/oneday/pku.jpg",
     "static/images/oneday/sii_night.jpg",
@@ -197,8 +199,6 @@
     "content/guide/project/index.md",
     "content/guide/git/index.md",
     "content/guide/git/git_cheat_sheet.pdf",
-    "content/posts/blog_style.md",
-    "content/guide/command_guide.md",
     "content/guide/project",
     "public/images/oneday/pku.jpg",
     "static/images/oneday/champion.jpg",
