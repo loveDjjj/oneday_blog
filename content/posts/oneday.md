@@ -9,6 +9,17 @@ tags:
 draft: false
 send_email: true
 ---
+## 2026年2月3日（Sii-Day 3）
+> #### ✅ Todo
+> - [ ] 开始训练Qwen-2.5-7B-VL
+> - [ ] 修改GAN-for-thin-film的代码，重跑，画图
+
+{{< quote-center >}}
+皇帝又站在了巴黎的中心！
+{{< /quote-center >}}
+
+
+
 ## 2026年2月2日（Sii-Day 2）
 > #### ✅ Todo
 > - [ ] 修改GAN-for-thin-film的代码，重跑，画图
