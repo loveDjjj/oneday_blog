@@ -18,6 +18,37 @@ send_email: true
 皇帝又站在了巴黎的中心！
 {{< /quote-center >}}
 
+> #### ✅ Done
+> - [x] 开始训练Qwen-2.5-7B-VL
+> - [x] 修改GAN-for-thin-film的代码，重跑，画图 {{< sidenote >}}算是鼓起勇气从头再来了吧，真是万事开头难，从头再来更难{{< /sidenote >}}
+
+swift训练命令参考（留作备份，这周末出一版完整的swift命令教程）：
+```bash
+CUDA_VISIBLE_DEVICES=0,1,2,3 \
+torchrun --nproc_per_node=4 -m swift.cli.sft \
+  --model Qwen/Qwen2.5-VL-7B-Instruct \
+  --dataset /root/shared-nvme/LDPolypVideo/ldpolyp_multitask_train.jsonl \
+  --val_dataset /root/shared-nvme/LDPolypVideo/ldpolyp_multitask_test_1500.jsonl \
+  --train_type lora \
+  --num_train_epochs 1 \
+  --eval_steps 1000 \
+  --save_total_limit 3 \
+  --per_device_train_batch_size 3 \
+  --attn_impl flash_attention_2 \
+  --dataloader_num_workers 30 \
+  --output_dir /root/shared-nvme/LDPolypVideo/lora_output
+```
+
+再次被swift搞得怀疑人生，但是最终还是在DJ学长的帮助下，成功让模型跑起来了。{{< sidenote >}}喜极而泣，感觉很多时候要是能有这样的学长或者师兄可以挺身而出，我真的会哭死的{{< /sidenote >}}
+
+之前埋的雷爆了，不知道为啥，代码在服务器4090上跑的会报错，主要是nan或者inf数值溢出的问题，但是在本机（4060Ti）或者服务器5090上跑不会有问题，本来以为是pytorch版本或者cuda版本的问题，但是服务器5090和4090的pytorch版本或者cuda版本是一样的，初步怀疑是随机数或者数值精度导致的溢出，先在能跑的卡上跑，埋个雷，以后有时间了来修。
+
+今天有好长一段时间我都在反思，进组快一年了，我真的得到成长了吗？毫无疑问，是有的，但是代价也是巨大的，因为很多时候没有师兄师姐可以在我遇到问题的时候伸出援手（因为他们也不懂我面临的困境），所以我需要很长很长的时间去试错，一遍又一遍，（这里要着重感谢GPT老师，没有GPT老师，我估计早被淹死在了BUG的海洋），这样的囚徒困境磨灭了我对科研的热情，至少是当前领域的热情，我真的很希望，可以在一个能够在师兄师姐的帮助下成长的课题组，而不是要靠自己独自摸索。希望我的博士生涯不会是一个人艰难探索的旅程{{< sidenote >}}hhh，当然除了小敏以外，还希望能有其余同路人{{< /sidenote >}}
+
+也希望，我可以尽早说出那句，轻舟已过万重山。
+
+{{< figure src="/images/oneday/gpu_4x4090.png" align="center" caption="算力压榨到极致真的超级爽（hhhh，万恶的资本家心态）" >}}
+
 
 
 ## 2026年2月2日（Sii-Day 2）
