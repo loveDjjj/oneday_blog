@@ -9,6 +9,42 @@ tags:
 draft: false
 send_email: true
 ---
+
+## 2026年2月4日（Sii-Day 4）
+> #### ✅ Todo
+> - [ ] 年终总结框架
+> - [ ] 完成Qwen-2.5-7B-VL BaseLine
+
+{{< quote-center >}}
+拿破仑一世，法国人的皇帝
+{{< /quote-center >}}
+ 
+> #### ✅Done
+> - [x] 年终总结框架
+> - [x] 完成Qwen-2.5-7B-VL BaseLine
+
+swift推理命令参考（结合vllm）：
+```bash
+NPROC_PER_NODE=4 \
+CUDA_VISIBLE_DEVICES=0,1,2,3 \
+swift infer \
+    --model Qwen/Qwen2.5-VL-7B-Instruct \
+    --adapters /root/shared-nvme/LDPolypVideo/lora_output/v0-20260203-211345/checkpoint-10330 \
+    --infer_backend vllm \
+    --val_dataset /root/shared-nvme/LDPolypVideo/ldpolyp_multitask_test_1500.jsonl \
+    --result_path /root/shared-nvme/LDPolypVideo/preds.jsonl \
+    --stream false \
+    --max_new_tokens 2048 \
+    --vllm_gpu_memory_utilization 0.4 \
+    --vllm_max_model_len 4096 \
+    --vllm_tensor_parallel_size 4 \
+    --max_batch_size 1 \
+    --write_batch_size 32
+```
+今天有组会，没上强度，明天上强度，希望我可以一天速通20多页的ppt。 
+
+{{< figure src="/images/oneday/new_year.jpg" align="center" caption="希望明年是创智大楼的新年" >}}
+
 ## 2026年2月3日（Sii-Day 3）
 > #### ✅ Todo
 > - [ ] 开始训练Qwen-2.5-7B-VL
