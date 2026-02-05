@@ -9,6 +9,13 @@ tags:
 draft: false
 send_email: true
 ---
+## 2026年2月5日（Sii-Day 5）
+> #### ✅ Todo
+> - [ ] 完成年终总结ppt
+
+{{< quote-center >}}
+为天地立心，为生民立命，为往圣继绝学，为万世开太平。
+{{< /quote-center >}}
 
 ## 2026年2月4日（Sii-Day 4）
 > #### ✅ Todo
@@ -19,7 +26,7 @@ send_email: true
 拿破仑一世，法国人的皇帝
 {{< /quote-center >}}
  
-> #### ✅Done
+> #### ✅ Done
 > - [x] 年终总结框架
 > - [x] 完成Qwen-2.5-7B-VL BaseLine
 
