@@ -17,6 +17,14 @@ send_email: true
 为天地立心，为生民立命，为往圣继绝学，为万世开太平。
 {{< /quote-center >}}
 
+> #### ✅ Done
+> - [ ] 完成年终总结ppt
+
+完成了一大半，明天继续加油。
+
+{{< figure src="/images/oneday/HNU.jpg" align="center" caption="感谢所有在我人生天色未明时出现的提灯人。" >}}
+
+
 ## 2026年2月4日（Sii-Day 4）
 > #### ✅ Todo
 > - [ ] 年终总结框架
