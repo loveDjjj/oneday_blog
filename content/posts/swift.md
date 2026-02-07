@@ -1,8 +1,8 @@
 ---
 title: Swift
-weight: 1
+weight: 10
 slug: swift
-date: 2026-02-08
+date: 2026-02-07
 lastmod: 2026-02-08
 categories:
   - LLM
@@ -13,9 +13,6 @@ tags:
   - RL
 draft: false
 description: 云服务器上部署swift用于微调LLM
-ShowToc: true
-TocOpen: true
-math: true
 send_email: true
 ---
 ## 服务器基本配置

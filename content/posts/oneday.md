@@ -25,7 +25,7 @@ send_email: true
 > - [ ] 完成微调技术文档，开始强化学习训练
 > - [ ] 完成Ai-store 相关任务
 
-今天主要还是在体验吧，确实也弄懂不少东西，完成了[swift.md](onedayoneday.xin/posts/swift)初稿，明天继续加油，争取完成任务，早日迈入强化学习的大门。
+今天主要还是在体验吧，确实也弄懂不少东西，完成了[swift.md](/posts/swift)初稿，明天继续加油，争取完成任务，早日迈入强化学习的大门。
 
 {{< figure src="/images/oneday/gpu_8x4090.png" align="center" caption="再次化身压榨的资本家">}}
 
