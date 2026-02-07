@@ -9,7 +9,37 @@ tags:
 draft: false
 send_email: true
 ---
-## 2026年2月5日（Sii-Day 5）
+## 2026年2月7日（Sii-Day 7） 
+> #### ✅ Todo
+> - [ ] 完成微调技术文档，开始强化学习训练
+> - [ ] 完成Ai-store 相关任务
+
+{{< quote-center >}}
+把所有的夜归还给星河，
+把所有春光归还给疏疏篱落，
+把所有的慵懒沉迷与不前，归还给过去的我。
+明日之我，胸中有丘壑，立马振山河。
+{{< /quote-center >}}
+
+
+
+## 2026年2月6日（Sii-Day 6） 
+> #### ✅ Todo
+> - [ ] 完成年终总结ppt，年终组会
+
+> #### ✅ Done
+> - [x] 完成年终总结ppt，年终组会
+
+今天年终组会，算是完成了初稿版的年终总结ppt。
+
+不腐烂在这里，是对自己最大的尊重。
+
+{{< figure src="/images/oneday/shanghai.jpg" align="center" caption="没戴眼镜，看不清对岸的风景，就像我看不清我的未来一样" >}}
+
+
+
+
+## 2026年2月5日（Sii-Day 5） 
 > #### ✅ Todo
 > - [ ] 完成年终总结ppt
 
