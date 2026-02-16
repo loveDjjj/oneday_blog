@@ -9,6 +9,20 @@ tags:
 draft: false
 send_email: true
 ---
+## 2026年2月16日
+> #### ✅ Todo
+> - [ ] 开始Leecode刷题和写题解
+> - [ ] 开始swift训练的环境配置和数据准备工作
+
+{{< quote-center >}}
+鹏北海，风朝阳，又携书剑路茫茫。
+明年此日青云去，却笑人间举子忙。
+{{< /quote-center >}}
+
+## 2026年2月8日-2026年2月15日 （Reset)
+> #### ✅ Done
+> - [x] noting for myself.
+
 ## 2026年2月7日（Sii-Day 7） 
 > #### ✅ Todo
 > - [ ] 完成微调技术文档，开始强化学习训练
