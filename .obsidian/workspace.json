@@ -4,65 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "279afdace3c72f19",
+        "id": "7876610e44209f27",
         "type": "tabs",
         "children": [
           {
-            "id": "c7b48543513b0eff",
+            "id": "732e1c7bbe7ccd64",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/guide/command_guide.md",
+                "file": "content/posts/sii.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "command_guide"
-            }
-          },
-          {
-            "id": "e70570447424519b",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.11.5"
-              },
-              "icon": "lucide-book-up",
-              "title": "版本说明 1.11.5"
-            }
-          },
-          {
-            "id": "abeb2a62d35c79f7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "content/posts/oneday.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "oneday"
-            }
-          },
-          {
-            "id": "99bb66075bb25142",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "content/posts/oneday.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "oneday"
+              "title": "sii"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -135,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/posts/oneday.md",
+                "file": "content/posts/sii.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -145,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "oneday 的反向链接列表"
+              "title": "sii 的反向链接列表"
             }
           },
           {
@@ -224,27 +183,33 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "99bb66075bb25142",
+  "active": "732e1c7bbe7ccd64",
   "lastOpenFiles": [
+    "public/posts/sii/index.html",
+    "public/posts/sii",
     "content/posts/swift.md",
-    "content/posts/oneday.md",
+    "content/posts/sii.md",
     "content/posts/reference_log.md",
-    "content/posts/blog_style.md",
     "posts/swift.md",
-    "posts",
     "onedayoneday.xin/posts/swift.md",
-    "content/posts/111111.md",
-    "public/tags/rl/index.xml",
-    "public/tags/lora/index.xml",
-    "public/tags/qwen/index.xml",
-    "public/tags/rl/page/1/index.html",
-    "public/tags/rl/page/1",
-    "public/tags/rl/page",
-    "public/tags/rl/index.html",
-    "public/tags/rl",
-    "public/tags/lora/page/1/index.html",
+    "content/posts/oneday.md",
+    "static/pdf/prompt_engineering.pdf",
+    "content/guide/git/index.md",
+    "public/pdf/prompt_engineering.pdf",
+    "public/pdf",
+    "public/categories/leetcode/index.xml",
+    "public/tags/算法/page/1/index.html",
+    "public/tags/算法/page/1",
+    "public/tags/算法/page",
+    "public/tags/算法/index.xml",
+    "public/tags/算法/index.html",
     "content/guide/command_guide.md",
+    "content/posts/blog_style.md",
+    "content/posts/leetcode.md",
     "content/posts/auto_reply_draft.md",
+    "content/guide/project/index.md",
+    "Pasted image 20260217140528.png",
+    "content/posts/111111.md",
     "static/images/oneday/brave_sheep.jpg",
     "static/images/oneday/beiyang.jpg",
     "static/images/oneday/gpu_8x4090.png",
@@ -255,9 +220,6 @@
     "public/posts/swift.md",
     "public/images/oneday/shanghai.jpg",
     "public/images/oneday/HNU.jpg",
-    "static/images/oneday/shanghai.jpg",
-    "content/guide/git/index.md",
-    "content/guide/project/index.md",
     "content/about/index.md"
   ]
 }
