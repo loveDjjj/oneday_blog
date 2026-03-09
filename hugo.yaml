@@ -3,6 +3,11 @@ languageCode: "zh-cn"
 title: "OneDay Blog"
 theme: "PaperMod"
 
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
 params:
   defaultTheme: auto
   ShowReadingTime: true

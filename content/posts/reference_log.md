@@ -17,8 +17,8 @@ draft: false
 
 ## 参考链接
 
-- Papermod 自定义字体实践：https://aimerneige.com/zh/post/web/set-custom-fonts-in-papermod-site/
-- Hugo 博客搭建指南（含配置与部署）：https://ruixi.top/zh/posts/hugo-blog-guide/
+- Papermod 自定义字体实践 https://aimerneige.com/zh/post/web/set-custom-fonts-in-papermod-site/
+- Hugo 博客搭建指南（含配置与部署 ) https://ruixi.top/zh/posts/hugo-blog-guide/
 - Hugo 博客精装修 https://yunpengtai.top/posts/hugo-journey/#%e4%be%a7%e8%be%b9%e6%82%ac%e6%b5%ae%e7%9b%ae%e5%bd%95
 - 这是引用 {{< sidenote >}}来源：[Hugo 官方](https://gohugo.io/){{< /sidenote >}}。
 {{< figure src="/images/background/bg1.jpg" align="center" caption="这是 caption：点击图片应该弹出 fancybox 放大预览" >}}
