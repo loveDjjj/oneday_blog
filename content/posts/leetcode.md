@@ -474,3 +474,109 @@ class Solution:
         return True
 ```
 {{< /collapse >}}
+
+## DAY 2 (滑动窗口专题——定长滑动窗口)
+### 定长滑动窗口模板
+```python
+for right in range(len(nums)):
+    # 1 进入窗口
+    add(nums[right])
+    # 2 窗口超过k
+    if right >= k:
+        remove(nums[right-k])
+    # 3 窗口大小=k时更新答案
+    if right >= k-1:
+        update()
+```
+### [1456. 定长子串中元音的最大数目](https://leetcode.cn/problems/maximum-number-of-vowels-in-a-substring-of-given-length/)
+### [643. 子数组最大平均数 I](https://leetcode.cn/problems/maximum-average-subarray-i/)
+### [1343. 大小为 K 且平均值大于等于阈值的子数组数目](https://leetcode.cn/problems/number-of-sub-arrays-of-size-k-and-average-greater-than-or-equal-to-threshold/)
+### [2090. 半径为 k 的子数组平均值](https://leetcode.cn/problems/k-radius-subarray-averages/)
+### [2379. 得到 K 个黑块的最少涂色次数](https://leetcode.cn/problems/minimum-recolors-to-get-k-consecutive-black-blocks/)
+### [2841. 几乎唯一子数组的最大和](https://leetcode.cn/problems/maximum-sum-of-almost-unique-subarray/)(结合哈希表)
+{{< collapse summary="点击展开" >}}
+```python
+from collections import defaultdict
+class Solution(object):
+    def maxSum(self, nums, m, k):
+        """
+        :type nums: List[int]
+        :type m: int
+        :type k: int
+        :rtype: int
+        题意：
+        找到长度为 k 的子数组，使得其中不同元素个数 >= m，
+        并返回该子数组的最大和。
+        """
+        # 记录窗口中每个元素出现的次数
+        freq = defaultdict(int)
+        # 当前窗口的元素和
+        window_sum = 0
+        # 记录满足条件的最大和
+        max_sum = 0
+        for i in range(len(nums)):
+            # 1. 右边界进入窗口
+            freq[nums[i]] += 1
+            window_sum += nums[i]
+            # 2. 如果窗口超过 k，需要移除左边元素
+            if i >= k:
+                left_value = nums[i - k]
+                window_sum -= left_value
+                freq[left_value] -= 1
+                # 如果该元素数量变为0，删除该key
+                # 保证 len(freq) 表示窗口中的 distinct 数量
+                if freq[left_value] == 0:
+                    del freq[left_value]
+            # 3. 当窗口大小达到 k 时，判断是否满足 distinct >= m
+            if i >= k - 1 and len(freq) >= m:
+                max_sum = max(max_sum, window_sum)
+        return max_sum
+```
+{{< /collapse >}}
+### [2461. 长度为 K 子数组中的最大和](https://leetcode.cn/problems/maximum-sum-of-distinct-subarrays-with-length-k/)
+### [1423. 可获得的最大点数](https://leetcode.cn/problems/maximum-points-you-can-obtain-from-cards/)
+### [3679. 使库存平衡的最少丢弃次数](https://leetcode.cn/problems/minimum-discards-to-balance-inventory/)(结合贪心)
+{{< collapse summary="点击展开" >}}
+```python
+from collections import defaultdict
+from typing import List
+class Solution:
+    def minArrivalsToDiscard(self, arrivals: List[int], w: int, m: int) -> int:
+        """
+        arrivals : 到达的事件序列
+        w        : 滑动窗口大小
+        m        : 每个值在窗口内最多允许出现的次数
+        目标：
+        在任何长度为 w 的窗口中，每个值最多出现 m 次。
+        如果超过 m 次，就需要丢弃当前到达的元素。
+        返回最少需要丢弃的数量。
+        """
+        # 记录当前窗口中每个值的出现次数
+        freq = defaultdict(int)
+        # 标记某个位置是否被丢弃
+        discarded = [0] * len(arrivals)
+        # 最少丢弃次数
+        discard_count = 0
+        for i in range(len(arrivals)):
+            # 1. 当前元素进入窗口
+            value = arrivals[i]
+            freq[value] += 1
+            # 2. 如果窗口超过 w，需要移除 i-w 位置的元素
+            if i >= w:
+                left_index = i - w
+                # 只有当该元素没有被丢弃时，才需要减少频率
+                if discarded[left_index] != 1:
+                    freq[arrivals[left_index]] -= 1
+            # 3. 如果当前元素出现次数超过 m，需要丢弃
+            if freq[value] > m:
+                # 回退刚刚加入的频率
+                freq[value] -= 1
+                # 标记当前位置为丢弃
+                discarded[i] = 1
+                # 丢弃计数 +1
+                discard_count += 1
+
+        return discard_count
+```
+{{< /collapse >}}
+### [1052. 爱生气的书店老板](https://leetcode.cn/problems/grumpy-bookstore-owner/)
