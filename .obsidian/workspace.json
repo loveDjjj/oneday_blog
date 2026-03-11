@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/posts/oneday.md",
+                "file": "content/posts/leetcode.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "oneday"
+              "title": "leetcode"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/posts/oneday.md",
+                "file": "content/posts/leetcode.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "oneday 的反向链接列表"
+              "title": "leetcode 的反向链接列表"
             }
           },
           {
@@ -185,14 +185,14 @@
   },
   "active": "732e1c7bbe7ccd64",
   "lastOpenFiles": [
+    "content/guide/command_guide.md",
+    "content/posts/oneday.md",
     "static/images/oneday/champion.jpg",
     "static/images/leetcode/time_complexity_analysis.png",
     "public/images/leetcode/time_complexity_analysis.png",
     "public/images/Pasted image 20260217140528.png",
     "content/posts/leetcode.md",
-    "content/guide/command_guide.md",
     "content/posts/reference_log.md",
-    "content/posts/oneday.md",
     "content/posts/blog_style.md",
     "content/posts/auto_reply_draft.md",
     "content/posts/sii.md",
@@ -218,7 +218,6 @@
     "static/images/oneday/gpu_8x4090.png",
     "public/images/oneday/gpu_8x4090.png",
     "public/images/oneday/a59d7082d917feb9b2f6f15e1a2f3568.png",
-    "static/images/oneday/gpu_4x4090.png",
     "public/posts/swift.md",
     "content/about/index.md"
   ]

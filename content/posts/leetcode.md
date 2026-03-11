@@ -185,7 +185,7 @@ delete      O(1)
 ```
 {{< /collapse >}}
 ## DAY 1
-### [1.两数之和](https://leetcode.cn/problems/two-sum/description/?envType=study-plan-v2&envId=top-100-liked)
+- [1.两数之和](https://leetcode.cn/problems/two-sum/description/?envType=study-plan-v2&envId=top-100-liked)
 O(n^2):
 ```python
 class Solution(object):
@@ -254,7 +254,7 @@ public:
 ```
 {{< figure src="/images/leetcode/time_complexity_analysis.png" align="center" caption="数据规模对应的时间复杂度" >}}
 
-### [2.两数相加(基于链表的倒序存储)](https://leetcode.cn/problems/two-sum/description/?envType=study-plan-v2&envId=top-100-liked)
+- [2.两数相加(基于链表的倒序存储)](https://leetcode.cn/problems/two-sum/description/?envType=study-plan-v2&envId=top-100-liked)
 思路分别计算两个数的大小，然后相加，最后用链表存储：
 {{< collapse summary="点击展开" >}}
 ```python
@@ -340,7 +340,7 @@ while cur:
     cur = cur.next
 ```
 
-### [3.相交链表](https://leetcode.cn/problems/intersection-of-two-linked-lists/)(哈希/双指针/链表)
+- [3.相交链表](https://leetcode.cn/problems/intersection-of-two-linked-lists/)(哈希/双指针/链表)
 双重while循环<span class=algo-key>O(m*n)超时</span>：
 {{< collapse summary="点击展开" >}}
 ```python
@@ -406,7 +406,7 @@ class Solution:
 ```
 {{< /collapse >}}
 
-### [4.反转链表](https://leetcode.cn/problems/reverse-linked-list/)(递归/链表)
+- [4.反转链表](https://leetcode.cn/problems/reverse-linked-list/)(递归/链表)
 递归写法：
 {{< collapse summary="点击展开" >}}
 ```python
@@ -446,7 +446,7 @@ class Solution:
 ```
 {{< /collapse >}}
 
-### [5.回文链表](https://leetcode.cn/problems/palindrome-linked-list/)(双指针/链表)
+- [5.回文链表](https://leetcode.cn/problems/palindrome-linked-list/)<span class=algo-key>(双指针/链表)</span>
 双指针<span class=algo-key>O(n)</span>：
 {{< collapse summary="点击展开" >}}
 ```python 
@@ -488,12 +488,12 @@ for right in range(len(nums)):
     if right >= k-1:
         update()
 ```
-### [1456. 定长子串中元音的最大数目](https://leetcode.cn/problems/maximum-number-of-vowels-in-a-substring-of-given-length/)
-### [643. 子数组最大平均数 I](https://leetcode.cn/problems/maximum-average-subarray-i/)
-### [1343. 大小为 K 且平均值大于等于阈值的子数组数目](https://leetcode.cn/problems/number-of-sub-arrays-of-size-k-and-average-greater-than-or-equal-to-threshold/)
-### [2090. 半径为 k 的子数组平均值](https://leetcode.cn/problems/k-radius-subarray-averages/)
-### [2379. 得到 K 个黑块的最少涂色次数](https://leetcode.cn/problems/minimum-recolors-to-get-k-consecutive-black-blocks/)
-### [2841. 几乎唯一子数组的最大和](https://leetcode.cn/problems/maximum-sum-of-almost-unique-subarray/)(结合哈希表)
+- [1456. 定长子串中元音的最大数目](https://leetcode.cn/problems/maximum-number-of-vowels-in-a-substring-of-given-length/)
+- [643. 子数组最大平均数 I](https://leetcode.cn/problems/maximum-average-subarray-i/)
+- [1343. 大小为 K 且平均值大于等于阈值的子数组数目](https://leetcode.cn/problems/number-of-sub-arrays-of-size-k-and-average-greater-than-or-equal-to-threshold/)
+- [2090. 半径为 k 的子数组平均值](https://leetcode.cn/problems/k-radius-subarray-averages/)
+- [2379. 得到 K 个黑块的最少涂色次数](https://leetcode.cn/problems/minimum-recolors-to-get-k-consecutive-black-blocks/)
+- [2841. 几乎唯一子数组的最大和](https://leetcode.cn/problems/maximum-sum-of-almost-unique-subarray/)<span class=algo-key>(结合哈希表)</span>
 {{< collapse summary="点击展开" >}}
 ```python
 from collections import defaultdict
@@ -533,9 +533,9 @@ class Solution(object):
         return max_sum
 ```
 {{< /collapse >}}
-### [2461. 长度为 K 子数组中的最大和](https://leetcode.cn/problems/maximum-sum-of-distinct-subarrays-with-length-k/)
-### [1423. 可获得的最大点数](https://leetcode.cn/problems/maximum-points-you-can-obtain-from-cards/)
-### [3679. 使库存平衡的最少丢弃次数](https://leetcode.cn/problems/minimum-discards-to-balance-inventory/)(结合贪心)
+[2461. 长度为 K 子数组中的最大和](https://leetcode.cn/problems/maximum-sum-of-distinct-subarrays-with-length-k/)
+[1423. 可获得的最大点数](https://leetcode.cn/problems/maximum-points-you-can-obtain-from-cards/)
+[3679. 使库存平衡的最少丢弃次数](https://leetcode.cn/problems/minimum-discards-to-balance-inventory/)<span class=algo-key>(结合贪心)</span>
 {{< collapse summary="点击展开" >}}
 ```python
 from collections import defaultdict
@@ -579,4 +579,43 @@ class Solution:
         return discard_count
 ```
 {{< /collapse >}}
-### [1052. 爱生气的书店老板](https://leetcode.cn/problems/grumpy-bookstore-owner/)
+[1052. 爱生气的书店老板](https://leetcode.cn/problems/grumpy-bookstore-owner/)
+
+## DAY 3 (滑动窗口专题——不定长滑动窗口)
+### 不定长滑动窗口模板
+```python
+for right:
+    add()
+    while invalid:
+        remove()
+    update()
+```
+- [3. 无重复字符的最长子串](https://leetcode.cn/problems/longest-substring-without-repeating-characters/)
+{{< collapse summary="点击展开" >}}
+```python
+from collections import defaultdict
+class Solution(object):
+    def lengthOfLongestSubstring(self, s):
+        window = defaultdict(int)
+        left = 0
+        res = 0
+        for right in range(len(s)):
+            c = s[right]
+            window[c] += 1
+            while window[c] > 1:
+                d = s[left]
+                window[d] -= 1
+                left += 1
+            res = max(res, right - left + 1)
+        return res
+```
+{{< /collapse >}}
+- [3090. 每个字符最多出现两次的最长子字符串](https://leetcode.cn/problems/maximum-length-substring-with-two-occurrences/)
+- [1493. 删掉一个元素以后全为 1 的最长子数组](https://leetcode.cn/problems/longest-subarray-of-1s-after-deleting-one-element/)
+- [3634. 使数组平衡的最少移除数目](https://leetcode.cn/problems/minimum-removals-to-balance-array/)
+- [1208. 尽可能使字符串相等](https://leetcode.cn/problems/get-equal-substrings-within-budget/)
+- [904. 水果成篮](https://leetcode.cn/problems/fruit-into-baskets/)
+- [1695. 删除子数组的最大得分](https://leetcode.cn/problems/maximum-erasure-value/)
+- [2958. 最多 K 个重复元素的最长子数组](https://leetcode.cn/problems/length-of-longest-subarray-with-at-most-k-frequency/)
+- [2024. 考试的最大困扰度](https://leetcode.cn/problems/maximize-the-confusion-of-an-exam/)
+- [1004. 最大连续1的个数 III](https://leetcode.cn/problems/max-consecutive-ones-iii/)
